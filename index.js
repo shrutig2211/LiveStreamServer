@@ -7,9 +7,10 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "*",
+    methods: ["GET", "POST"],
   },
 });
-app.get("/", (req, res) => res.send("Server is Running"));
+
 const emailToSocketIdMap = new Map();
 const socketidToEmailMap = new Map();
 
